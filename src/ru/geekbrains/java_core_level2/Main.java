@@ -16,5 +16,28 @@ public class Main {
 
     public static void main(String[] args) {
         Actions[] competitors = {new Human("Василий"), new Cat("Барсик"), new Robot("Бамблби")};
+
+        Obstacle[] obstacles = {new RunningTrack(300), new Wall(5)};
+
+        Team team = new Team(competitors);
+
+        System.out.println("В команды входят:");
+        team.showResults();
+        System.out.println(" ");
+
+        Course course = new Course(obstacles);
+
+        System.out.println("Прохождение:");
+        course.go(team);
+        System.out.println(" ");
+
+        System.out.println("Результаты прохождения:");
+        team.showResults();
+        System.out.println(" ");
+
+        System.out.println("Прошли все препятствия:");
+        team.showMembersFinishedCourse();
+        System.out.println(" ");
+        
     }
 }

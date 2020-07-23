@@ -11,28 +11,28 @@ public class Participant implements Actions {
         return distanceCheck;
     }
 
-    public Participant(String type, String name, int maxRunDistance, int maxJumpHeight) {
+    public Participant(String type, String name, int maxRunLength, int maxJumpHeight) {
         this.type = type;
         this.name = name;
-        this.run = maxRunDistance;
+        this.run = maxRunLength;
         this.jump = maxJumpHeight;
         this.distanceCheck = true;
     }
 
     public void run(int distance) {
         if (distance <= run) {
-            System.out.println(type + " " + name + " " + " справился с беговой дорожкой");
+            System.out.println(type + " " + name + " " + " справился с беговой дорожкой длиной " + RunningTrack.length);
         } else {
-            System.out.println(type + " " + name + " " + " не справился с беговой дорожкой");
+            System.out.println(type + " " + name + " " + " не справился с беговой дорожкой длиной " + RunningTrack.length);
             distanceCheck = false;
         }
     }
 
     public void jump(int height) {
         if (height <= jump) {
-            System.out.println(type + " " + name + " " + " смог перепрыгнуть стену");
+            System.out.println(type + " " + name + " " + " смог перепрыгнуть стену высотой " + Wall.height);
         } else {
-            System.out.println(type + " " + name + " " + " не смог перепрыгнуть стену");
+            System.out.println(type + " " + name + " " + " не смог перепрыгнуть высотой " + Wall.height);
             distanceCheck = false;
         }
     }
